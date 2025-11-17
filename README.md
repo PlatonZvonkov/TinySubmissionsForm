@@ -29,7 +29,8 @@ To run and view tests locally in real time, you need to:
     npm run build 
 
 
-# Considering handling large files (~100mb) with high rates - this will require decoupling storage from the database. This approach ensures the database remains fast for querying metadata, while a highly scalable Object Storage system manages the large files.
+# Part 2
+Considering handling large files (~100mb) with high rates - this will require decoupling storage from the database. This approach ensures the database remains fast for querying metadata, while a highly scalable Object Storage system manages the large files.
 How would i approach this issue:
 The architecture will be shifted to use a dedicated cloud service for binary data and will employ the Pre-Signed URL pattern, which offloads the heavy data transfer from the Web API and handles security and authorization efficiently.
 
