@@ -63,15 +63,6 @@ API returns generated URL and the unique StorageKey to the client.
 6) Once the upload is confirmed, the client submits the final form data, including the unique StorageKey (not the file content itself), to the POST /api/submissions endpoint.
 7) The unique StorageKey and attachment metadata are saved in the relational database ( new *SubmissionAttachments* table).
 
-# OR 
-
-1) Client code request a download link for a specific attachment (```GET /api/submissions/{id}/attachments/{key}/download-url```).
-2) API checks the database to verify the user is authorized to access the attachment associated with the submission ID.
-3) API calls the *IAttachmentStorageService*, which generates a time-limited, secure Download URL from the  Object Storage.
-4) API returns the download URL.
-5) Client code uses this temporary URL to download the file directly from the Storage.
-
-
 new table in DB will be sonth like that:
 ```
 record SubmissionAttachments{
@@ -83,3 +74,12 @@ record SubmissionAttachments{
   int UploadedBy
 }
 ```
+
+# OR 
+
+1) Client code request a download link for a specific attachment (```GET /api/submissions/{id}/attachments/{key}/download-url```).
+2) API checks the database to verify the user is authorized to access the attachment associated with the submission ID.
+3) API calls the *IAttachmentStorageService*, which generates a time-limited, secure Download URL from the  Object Storage.
+4) API returns the download URL.
+5) Client code uses this temporary URL to download the file directly from the Storage.
+
