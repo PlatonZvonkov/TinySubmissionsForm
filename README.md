@@ -1,8 +1,9 @@
-# BE:
+# Part 1
+ BE:
 # .Net9 + ASP.NET Core
 # REST-service based on Clean Architecture
 #
-# FE:
+ FE:
 # Vue3 + Vite
 # SinglePage UI for listing and searching the submitted objects from different forms
 
