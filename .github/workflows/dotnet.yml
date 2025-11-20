@@ -23,6 +23,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build TinyForm.WebAPI/TinyForm.WebAPI.csproj
+      working-directory: TinyForm.WebAPI
+      run: dotnet build --verbosity normal
     - name: Test
+      working-directory: TinyFor.Tests
       run: dotnet test --no-build --verbosity normal
