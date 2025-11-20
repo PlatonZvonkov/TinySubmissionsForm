@@ -25,5 +25,5 @@ jobs:
     - name: Build
       run: dotnet build TinyForm.WebAPI/TinyForm.WebAPI.csproj
     - name: Test      
-      run: dotnet test --no-build --verbosity normal
-      working-directory: TinyFor.Tests
+      run: dotnet test TinyFor.Tests/TinyFor.Tests.csproj --no-build --verbosity normal
+      
