@@ -21,10 +21,9 @@ jobs:
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore TinyForm.WebAPI/TinyForm.WebAPI.csproj
     - name: Build
-      working-directory: TinyForm.WebAPI
-      run: dotnet build --verbosity normal
-    - name: Test
-      working-directory: TinyFor.Tests
+      run: dotnet build TinyForm.WebAPI/TinyForm.WebAPI.csproj
+    - name: Test      
       run: dotnet test --no-build --verbosity normal
+      working-directory: TinyFor.Tests
